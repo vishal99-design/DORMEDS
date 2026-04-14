@@ -829,3 +829,14 @@ document.addEventListener('click', e => {
   const d = document.getElementById('searchDrop');
   if (d && !e.target.closest('.search')) d.style.display = 'none';
 });
+function searchMedicine() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+
+  if (input === "paracetamol") {
+    document.getElementById("result").innerText = "Available - ₹20";
+  } else if (input === "crocin") {
+    document.getElementById("result").innerText = "Available - ₹25";
+  } else {
+    document.getElementById("result").innerText = "Medicine not found";
+  }
+}
