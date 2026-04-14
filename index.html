@@ -16,14 +16,10 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app"></div>
-  <div id="toast-container" class="toast-container"></div>
-  <div id="modal-root"></div>
   <h2>Upload Prescription</h2>
 
 <input type="file" id="prescriptionFile">
-
-<button onclick="processPrescription()">Process Prescription</button>
+<button onclick="uploadPrescription()">Process Prescription</button>
 
 <h3>Original:</h3>
 <img id="preview" width="200">
@@ -34,37 +30,50 @@
 <h3>Pharmacy Decision:</h3>
 <button onclick="acceptPrescription()">Accept</button>
 <button onclick="rejectPrescription()">Reject</button>
-<p id="status"></p>   <!-- 👈 ye add kar -->
+
 <p id="status"></p>
-  <script src="app.js"></script>
-  38  <script src="data.js"></script>
-39  <script src="app.js"></script>
 
-40  <!-- 👇 YAHAN PASTE KAR -->
-41  <h2>Search Medicine</h2>
+<hr>
 
-42  <input type="text" id="searchInput" placeholder="Enter medicine name">
+<h2>Search Medicine</h2>
+<input type="text" id="searchInput" placeholder="Enter medicine name">
+<button onclick="searchMedicine()">Search</button>
 
-43  <button onclick="searchMedicine()">Search</button>
+<p id="result"></p>
 
-44  <p id="result"></p>
+<script src="data.js"></script>
+<script src="app.js"></script>
 
-45  <h2>Upload Prescription</h2>
-46  <input type="file" id="prescriptionFile">
+</body>
+  <div id="app"></div>
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-root"></div>
+  <h2>Upload Prescription</h2>
 
-47  <button onclick="processPrescription()">Process Prescription</button>
+<input type="file" id="prescriptionFile">
 
-48  <h3>Original:</h3>
-49  <img id="preview" width="200">
+<button onclick="uploadPrescription()">Process Prescription</button>
+<h3>Original:</h3>
+<img id="preview" width="200">
 
-50  <h3>Extracted Text (AI):</h3>
-51  <p id="convertedText"></p>
+<h3>Extracted Text (AI):</h3>
+<p id="convertedText">Waiting...</p>
 
-52  <h3>Pharmacy Action:</h3>
-53  <button onclick="acceptPrescription()">Accept</button>
-54  <button onclick="rejectPrescription()">Reject</button>
+<h3>Pharmacy Decision:</h3>
+<button onclick="acceptPrescription()">Accept</button>
+<button onclick="rejectPrescription()">Reject</button>
+<p id="status"></p>
+  <script src="data.js"></script>
+<script src="app.js"></script>
+ <h2>Search Medicine</h2>
+ <input type="text" id="searchInput" placeholder="Enter medicine name">
+ <button onclick="searchMedicine()">Search</button>
+ <p id="result"></p>
+  <h2>Upload Prescription</h2>
+ <input type="file" id="prescriptionFile">
 
-55  <p id="status"></p>
+ <button onclick="processPrescription()">Process Prescription</button>
 
-56 </body>
+  <h3>Original:</h3>
+</body>
 </html>
