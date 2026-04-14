@@ -840,3 +840,27 @@ function searchMedicine() {
     document.getElementById("result").innerText = "Medicine not found";
   }
 }
+function uploadPrescription() {
+  let file = document.getElementById("prescriptionFile").files[0];
+
+  if (!file) {
+    alert("Please upload file");
+    return;
+  }
+
+  // Show image preview
+  let preview = document.getElementById("preview");
+  preview.src = URL.createObjectURL(file);
+
+  // Fake "AI converted text"
+  document.getElementById("convertedText").innerText =
+    "Paracetamol 500mg - 2 times daily\nIbuprofen - after food";
+}
+
+function acceptPrescription() {
+  document.getElementById("status").innerText = "✅ Accepted by Pharmacy";
+}
+
+function rejectPrescription() {
+  document.getElementById("status").innerText = "❌ Rejected by Pharmacy";
+}
