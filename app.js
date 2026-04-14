@@ -831,7 +831,10 @@ document.addEventListener('click', e => {
 });
 function searchMedicine() {
   let input = document.getElementById("searchInput").value.toLowerCase();
-
+if (!input) {
+    document.getElementById("result").innerText = "Enter medicine name";
+    return;
+}
   if (input === "paracetamol") {
     document.getElementById("result").innerText = "Available - ₹20";
   } else if (input === "crocin") {
@@ -850,11 +853,12 @@ function uploadPrescription() {
 
   // Show image preview
   let preview = document.getElementById("preview");
-  preview.src = URL.createObjectURL(file);
-
+  if (preview.src) {
+    URL.revokeObjectURL(preview.src);
+}
+preview.src = URL.createObjectURL(file);
   // Fake "AI converted text"
-  document.getElementById("convertedText").innerText =
-    "Paracetamol 500mg - 2 times daily\nIbuprofen - after food";
+  "Paracetamol 500mg - 2 times daily <br> Ibuprofen - after food";
 }
 
 function acceptPrescription() {
