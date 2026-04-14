@@ -25,7 +25,23 @@
 <h2>Search Medicine</h2>
 
 <input type="text" id="searchInput" placeholder="Enter medicine name">
+<h2>Upload Prescription</h2>
 
+<input type="file" id="prescriptionFile">
+
+<button onclick="uploadPrescription()">Upload</button>
+
+<h3>Original Prescription:</h3>
+<img id="preview" width="200"/>
+
+<h3>Computerized Text:</h3>
+<p id="convertedText"></p>
+
+<h3>Pharmacy Action:</h3>
+<button onclick="acceptPrescription()">Accept</button>
+<button onclick="rejectPrescription()">Reject</button>
+
+<p id="status"></p>
 <button onclick="searchMedicine()">Search</button>
 
 <p id="result"></p>
