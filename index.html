@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="DORMEDS Fast Medicine — India's smartest medicine delivery. Order medicines, upload prescriptions, track delivery in real-time." />
   <meta name="theme-color" content="#0A0A0F" />
@@ -18,30 +19,52 @@
   <div id="app"></div>
   <div id="toast-container" class="toast-container"></div>
   <div id="modal-root"></div>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
-<h2>Search Medicine</h2>
-
-<input type="text" id="searchInput" placeholder="Enter medicine name">
-<h2>Upload Prescription</h2>
+  <h2>Upload Prescription</h2>
 
 <input type="file" id="prescriptionFile">
 
-<button onclick="uploadPrescription()">Upload</button>
+<button onclick="processPrescription()">Process Prescription</button>
 
-<h3>Original Prescription:</h3>
-<img id="preview" width="200"/>
+<h3>Original:</h3>
+<img id="preview" width="200">
 
-<h3>Computerized Text:</h3>
-<p id="convertedText"></p>
+<h3>Extracted Text (AI):</h3>
+<p id="convertedText">Waiting...</p>
 
-<h3>Pharmacy Action:</h3>
+<h3>Pharmacy Decision:</h3>
 <button onclick="acceptPrescription()">Accept</button>
 <button onclick="rejectPrescription()">Reject</button>
-
+<p id="status"></p>   <!-- 👈 ye add kar -->
 <p id="status"></p>
-<button onclick="searchMedicine()">Search</button>
+  <script src="app.js"></script>
+  38  <script src="data.js"></script>
+39  <script src="app.js"></script>
 
-<p id="result"></p>
+40  <!-- 👇 YAHAN PASTE KAR -->
+41  <h2>Search Medicine</h2>
+
+42  <input type="text" id="searchInput" placeholder="Enter medicine name">
+
+43  <button onclick="searchMedicine()">Search</button>
+
+44  <p id="result"></p>
+
+45  <h2>Upload Prescription</h2>
+46  <input type="file" id="prescriptionFile">
+
+47  <button onclick="processPrescription()">Process Prescription</button>
+
+48  <h3>Original:</h3>
+49  <img id="preview" width="200">
+
+50  <h3>Extracted Text (AI):</h3>
+51  <p id="convertedText"></p>
+
+52  <h3>Pharmacy Action:</h3>
+53  <button onclick="acceptPrescription()">Accept</button>
+54  <button onclick="rejectPrescription()">Reject</button>
+
+55  <p id="status"></p>
+
+56 </body>
+</html>
